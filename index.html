@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>女性の労働と男性の労働 丸わかり | 労働経済論 後期第3回</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+  chtml: { scale: 1.05 }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+<style>
+:root {
+  --ink: #1f2937;
+  --ink-soft: #4b5563;
+  --muted: #6b7280;
+  --accent: #1e3a8a;
+  --accent-2: #0e7490;
+  --accent-3: #b45309;
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --line: #e5e7eb;
+  --line-soft: #f1f1ec;
+  --highlight: #fef3c7;
+  --good: #047857;
+  --danger: #b91c1c;
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "palt";
+  color: var(--ink-soft);
+  background: var(--bg);
+  line-height: 1.75;
+}
+.page { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+@media (max-width: 620px) { .page { padding: 20px 14px 60px; } }
+
+.cover {
+  border-left: 6px solid var(--accent);
+  padding: 20px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fc 100%);
+  border-radius: 4px 14px 14px 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, .05);
+  margin-bottom: 24px;
+}
+.cover .eyebrow { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .2em; margin-bottom: 6px; }
+.cover h1 { font-size: 28px; font-weight: 900; color: var(--accent); margin: 0 0 6px; line-height: 1.3; letter-spacing: .02em; }
+.cover .sub { font-size: 14px; color: var(--muted); }
+
+section { margin: 40px 0; }
+.section-title {
+  font-size: 22px; font-weight: 900; color: var(--ink);
+  margin: 0 0 16px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--line);
+  display: flex; align-items: center; gap: 10px;
+  line-height: 1.3; letter-spacing: .02em;
+}
+h3 { font-size: 17px; font-weight: 700; color: var(--accent); margin: 28px 0 10px; line-height: 1.3; }
+h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin: 18px 0 8px; }
+p { margin: 10px 0; font-size: 15px; }
+strong { color: var(--ink); }
+ul, ol { padding-left: 20px; }
+li { margin: 4px 0; font-size: 15px; }
+
+.step-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 56px; height: 26px; padding: 0 10px; flex-shrink: 0;
+  border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; color: white;
+}
+.step-badge.intro   { background: var(--accent); }
+.step-badge.summary { background: var(--accent); }
+.step-badge.s-teal  { background: var(--accent-2); }
+.step-badge.s-amber { background: var(--accent-3); }
+
+.toc { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0 8px; }
+@media (max-width: 620px) { .toc { grid-template-columns: 1fr; } }
+.toc a {
+  display: block; padding: 14px 16px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 14px;
+  text-decoration: none; color: var(--ink); transition: all .15s;
+}
+.toc a:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30, 58, 138, .08); border-color: #c7d2fe; }
+.toc .num { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .2em; }
+.toc .ttl { font-size: 15px; font-weight: 700; color: var(--accent); margin: 4px 0 2px; }
+.toc .desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px 22px; margin: 16px 0; box-shadow: 0 1px 3px rgba(15, 23, 42, .04);
+}
+.callout { background: #ecfeff; border-left: 4px solid var(--accent-2); border-radius: 4px 10px 10px 4px; padding: 12px 16px; margin: 14px 0; }
+.callout.step2 { background: #fff7ed; border-left-color: var(--accent-3); }
+.callout.intro { background: #eef2ff; border-left-color: var(--accent); }
+.callout p { margin: 6px 0; font-size: 14.5px; }
+.callout ul { margin: 6px 0; }
+.callout li { font-size: 14.5px; }
+
+.note { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px 16px; font-size: 14.5px; margin: 14px 0; }
+.note .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #92400e; margin-right: 8px; }
+.note p { margin: 4px 0; font-size: 14.5px; }
+.note li { font-size: 14.5px; }
+
+.math-block { background: #f8f8f3; border: 1px dashed #d6d3c7; border-radius: 10px; padding: 14px 18px; margin: 14px 0; font-size: 16px; overflow-x: auto; }
+
+.discuss { background: #ecfeff; border-left: 4px solid var(--accent-2); border-radius: 4px 12px 12px 4px; padding: 14px 18px; margin: 18px 0; }
+.discuss-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.discuss-tag { font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #fff; background: var(--accent-2); padding: 3px 10px; border-radius: 999px; }
+.discuss-q { font-size: 15px; font-weight: 700; color: var(--ink); margin: 4px 0; line-height: 1.7; }
+.discuss-hint { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; }
+.discuss-hint summary { cursor: pointer; font-weight: 700; color: var(--accent-2); font-size: 13px; }
+.discuss-hint summary:hover { color: var(--accent); }
+.discuss-hint .body { padding: 8px 0 0; font-size: 13.5px; }
+.discuss-hint .body p, .discuss-hint .body li { font-size: 13.5px; }
+
+.answer-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+.answer-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.answer-tag { font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #92400e; background: #fef3c7; padding: 3px 10px; border-radius: 999px; }
+.answer-id { font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; color: var(--accent-3); letter-spacing: .06em; }
+.answer-q { font-size: 14px; color: var(--ink); margin: 4px 0 8px; line-height: 1.7; font-weight: 500; }
+textarea.answer-input {
+  width: 100%; min-height: 90px; padding: 10px 12px;
+  border: 1px solid #e5d99c; border-radius: 8px; background: #fffef9;
+  font-family: inherit; font-size: 14px; color: var(--ink); resize: vertical; line-height: 1.6;
+}
+textarea.answer-input:focus { outline: none; border-color: var(--accent-3); background: #ffffff; }
+.answer-save { display: inline-block; margin-top: 6px; font-size: 11.5px; color: var(--muted); }
+.answer-save.saved { color: var(--good); font-weight: 700; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.legend .item { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
+.legend .box { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid rgba(0,0,0,.08); }
+.legend .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 14px 0; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: center; }
+th { background: #f5f5ef; font-weight: 700; }
+td.lead { text-align: left; font-weight: 700; color: var(--ink); }
+td.left { text-align: left; }
+td.highlight { background: var(--highlight); font-weight: 700; }
+.table-wrap { overflow-x: auto; }
+.num-cell { font-family: "JetBrains Mono", monospace; font-size: 13px; }
+
+.static-graph { background: #fcfcfa; border: 1px solid var(--line-soft); border-radius: 10px; padding: 12px; margin: 14px 0; }
+.static-graph svg { display: block; width: 100%; max-width: 680px; height: auto; margin: 0 auto; }
+.caption { font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 6px; }
+.src { font-size: 12px; color: var(--muted); margin-top: 4px; text-align: right; }
+.src a { color: var(--muted); }
+
+.graph-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin: 18px 0; }
+.graph-title { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .06em; margin-bottom: 10px; }
+.graph-wrap canvas { display: block; width: 100%; height: 320px; touch-action: none; }
+.controls { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 14px; }
+.control { flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; }
+.control label { font-size: 12px; font-weight: 700; color: var(--ink-soft); }
+.control input[type=range] { width: 100%; accent-color: var(--accent); }
+.readout {
+  font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--ink);
+  background: #f5f5ef; border-radius: 6px; padding: 3px 8px; display: inline-block;
+}
+.verdict { margin-top: 12px; font-size: 14px; padding: 10px 14px; border-radius: 10px; background: #f8f8f3; border: 1px solid var(--line); }
+.verdict.good { border-color: #a7f3d0; background: #ecfdf5; }
+.verdict.bad  { border-color: #fecaca; background: #fef2f2; }
+.verdict b.good { color: var(--good); }
+.verdict b.bad  { color: var(--danger); }
+
+.goal-list { list-style: none; padding: 0; margin: 12px 0; }
+.goal-list li { background: #ffffff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin: 8px 0; font-size: 14px; }
+.goal-list li .gnum {
+  display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700;
+  color: #fff; background: var(--accent); padding: 2px 8px; border-radius: 999px; margin-right: 8px; letter-spacing: .04em;
+}
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+@media (max-width: 620px) { .split { grid-template-columns: 1fr; } }
+.split .card { margin: 0; }
+.split .card h4 { margin-top: 0; }
+
+.kv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+@media (max-width: 620px) { .kv-grid { grid-template-columns: 1fr; } }
+.kv { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+.kv .big { font-family: "JetBrains Mono", monospace; font-size: 22px; font-weight: 700; color: var(--accent-2); }
+.kv .big.amber { color: var(--accent-3); }
+.kv .lbl { font-size: 12.5px; color: var(--muted); }
+
+.fill { display: inline-block; min-width: 60px; border-bottom: 1.5px solid var(--accent-3); text-align: center; color: var(--accent-3); font-weight: 700; padding: 0 4px; }
+.fills-hidden .fill { color: transparent; user-select: none; }
+.toggle-btn {
+  font-family: inherit; font-size: 12.5px; font-weight: 700; color: var(--accent-3);
+  background: #fff7ed; border: 1px solid #fed7aa; border-radius: 999px; padding: 4px 14px; cursor: pointer;
+}
+.toggle-btn:hover { background: #ffedd5; }
+
+.steps3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0; }
+@media (max-width: 620px) { .steps3 { grid-template-columns: 1fr; } }
+.stepbox { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 15px; }
+.stepbox .sn { font-family: "JetBrains Mono", monospace; font-size: 22px; font-weight: 700; color: var(--accent-2); line-height: 1; }
+.stepbox .st { font-size: 14px; font-weight: 700; color: var(--ink); margin: 5px 0 2px; }
+.stepbox .sd { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+.seg button {
+  font-family: inherit; font-size: 12.5px; font-weight: 700; color: var(--ink-soft);
+  background: transparent; border: 0; padding: 5px 14px; cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--accent); color: #fff; }
+
+.footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); text-align: center; }
+a.inline-link { color: var(--accent-2); }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="eyebrow">労働経済論 後期第3回 補助教材</div>
+  <h1>女性の労働と男性の労働 ― 格差はどこから生まれるのか</h1>
+  <div class="sub">働く女性は増え、M字カーブはほぼ台形になった。それでも男女の賃金は100対76.6で、管理職に占める女性は1割台にとどまる。この差は「差別」だけで説明できるのか。世帯内の分業（比較優位）、人的資本への投資、ファミリーコミットメント、そして配偶者の選択という4つの視点から、データと理論の両面で読み解く</div>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <a href="#intro">
+    <div class="num">00 / INTRO</div>
+    <div class="ttl">前回の復習と本日のゴール</div>
+    <div class="desc">若年者・高齢者の穴埋め／ゴールディンのノーベル賞</div>
+  </a>
+  <a href="#status">
+    <div class="num">01 / 現状</div>
+    <div class="ttl">データで見る女性の働き方</div>
+    <div class="desc">労働力人口の女性割合／M字カーブの変化／配偶者の有無</div>
+  </a>
+  <a href="#employment">
+    <div class="num">02 / 雇用形態</div>
+    <div class="ttl">非正規雇用・L字カーブ・勤続年数</div>
+    <div class="desc">働く女性の半分強は非正規／正規雇用比率は20代後半がピーク</div>
+  </a>
+  <a href="#gap">
+    <div class="num">03 / 賃金格差</div>
+    <div class="ttl">男女の賃金格差と管理職</div>
+    <div class="desc">100対76.6／格差の要因分解／役職者の女性割合／メルカリの事例</div>
+  </a>
+  <a href="#household">
+    <div class="num">04 / 世帯内の分業</div>
+    <div class="ttl">共働きと比較優位の原理</div>
+    <div class="desc">共働き世帯の増加／ライフコースの希望／家事の分担を動かす</div>
+  </a>
+  <a href="#region">
+    <div class="num">05 / 地域差</div>
+    <div class="ttl">都道府県で女性就業率が違う理由</div>
+    <div class="desc">北陸・山陰で高く、大都市圏で低い／三世代同居</div>
+  </a>
+  <a href="#human">
+    <div class="num">06 / 人的資本</div>
+    <div class="ttl">人的資本投資と企業特殊的訓練</div>
+    <div class="desc">学歴・専攻・Off-JTの男女差／共同投資と就業中断を動かす</div>
+  </a>
+  <a href="#family">
+    <div class="num">07 / ファミリー<br>コミットメント</div>
+    <div class="ttl">同じ職場・同じ制度でも差が出る</div>
+    <div class="desc">MBA修了者の追跡／電車・バス運転士の研究／夫婦の年収</div>
+  </a>
+  <a href="#spouse">
+    <div class="num">08 / 配偶者の選択</div>
+    <div class="ttl">女性の活躍と配偶者の選択</div>
+    <div class="desc">上方婚・下方婚とマッチング／学歴の勾配の反転</div>
+  </a>
+  <a href="#task">
+    <div class="num">09 / 検討課題</div>
+    <div class="ttl">検討課題 ― 自分の選択として考える</div>
+    <div class="desc">配偶者の選択／仕事と子育てを両立するためにできること</div>
+  </a>
+  <a href="#summary">
+    <div class="num">10 / SUMMARY</div>
+    <div class="ttl">まとめと次回までの課題</div>
+    <div class="desc">本日のポイント／外国人労働者の受け入れ制度の事前学習</div>
+  </a>
+</nav>
+
+<!-- INTRO -->
+<section id="intro">
+  <h2 class="section-title"><span class="step-badge intro">INTRO</span>前回の復習と本日のゴール</h2>
+
+  <p>後期第2回では、労働市場の<strong>入口にいる若年者</strong>と、<strong>出口に近づいた高齢者</strong>を扱った。今回は「多様な働き方」の3回目として、<strong>女性の労働と男性の労働</strong>を比べる。</p>
+
+  <h3>前回の穴埋め ― 言葉を思い出そう</h3>
+  <p style="margin-bottom:6px;"><button type="button" class="toggle-btn" id="fillToggle">答えを隠す</button></p>
+  <div class="card" id="fillCard">
+    <ul>
+      <li>若年者とは<span class="fill">15</span>歳から<span class="fill">24</span>歳までを指す。</li>
+      <li>若年者の<span class="fill">失業率</span>は、その他の世代よりも高い。</li>
+      <li>大学の新卒者の離職率については、3年以内に約<span class="fill">3</span>割が辞めてしまう。</li>
+      <li>若者の就職が容易かどうかは、卒業する時点での<span class="fill">景気</span>に左右される。</li>
+      <li>就職・採用時には、技能や技術、産業、地域、職種についての<span class="fill">ミスマッチ</span>がある。</li>
+      <li>企業が採用を行う際には、複数の候補者の中で<span class="fill">能力が高い</span>順に採用するとは限らない。他に<span class="fill">相性や定着（離職しにくさ）</span>なども重要。</li>
+      <li>学生の視点からは、<span class="fill">能力</span>を高めることが常に良いわけではなく、その地域や企業から離れないと相手企業に信じてもらえることも重要な要素になる。</li>
+      <li>65歳から69歳までの男性高齢者の就業率は、<span class="fill">60</span>％以上と高い水準になっている。</li>
+      <li>現在収入のある仕事をしている60歳以上の<span class="fill">33.5</span>％が「働けるうちはいつまでも」働きたいと回答している。</li>
+      <li>企業が高齢者を雇用する理由は<span class="fill">人手不足</span>と<span class="fill">技能の継承</span>がある。</li>
+      <li>高年齢者雇用安定法により、企業には<span class="fill">65</span>歳までの就業確保措置義務と<span class="fill">70</span>歳までの努力義務がある。</li>
+      <li>これから働く若者は、年上の部下と一緒に働くことなどを想定する必要がある。</li>
+    </ul>
+  </div>
+
+  <h3>2023年度のノーベル経済学賞 ― クラウディア・ゴールディン</h3>
+  <div class="card">
+    <ul>
+      <li>受賞者はハーバード大学の<strong>クラウディア・ゴールディン</strong>教授。受賞理由は「<strong>女性の労働市場における成果についての理解を深めたこと</strong>」。</li>
+      <li>女性の労働参加率の長期的な変化や、<strong>男女間賃金格差の原因</strong>などについて先進的な研究を行った。</li>
+      <li>オーケストラの団員採用で、性別がわからないように<strong>スクリーン越しに演奏</strong>（ブラインド・オーディション）するようにしたら女性の採用率が大幅に増えた、という研究も有名である。</li>
+    </ul>
+    <p style="font-size:13.5px;color:var(--muted);">ただし、このオーケストラの研究は、その後の再分析で結論の強さに<strong>疑義が持たれている</strong>点には注意しておこう。有名な研究だからといって、結論をそのまま信じてよいとは限らない。</p>
+  </div>
+
+  <div class="callout intro">
+    <p>今回のカギは、<strong>「男女の差」を、ただちに「差別」と決めつけず、どこまでが何で説明できるのかを分けて考える</strong>ということ。役職や勤続年数の違い、世帯内の分業、人的資本投資の違い、子育てに伴う働き方の違い ― それぞれを理論とデータで確かめ、そのうえで<strong>「説明できない差」</strong>がどれだけ残るかを考える。</p>
+  </div>
+
+  <h3>本日のゴール</h3>
+  <ol class="goal-list">
+    <li><span class="gnum">G1</span>女性の就業率の<strong>M字カーブ</strong>がほぼ台形になった一方で、正規雇用比率は<strong>L字カーブ</strong>を描くことを、データで説明できる</li>
+    <li><span class="gnum">G2</span>男女の賃金格差（<strong>100対76.6</strong>）と、その要因分解（役職・勤続年数など）を読み取れる</li>
+    <li><span class="gnum">G3</span><strong>比較優位の原理</strong>を使って、世帯内の分業で家事時間が減ることを数値例で示せる</li>
+    <li><span class="gnum">G4</span><strong>企業特殊的訓練への共同投資</strong>のモデルで、就業中断の可能性が訓練機会の男女差を生む理由を説明できる</li>
+    <li><span class="gnum">G5</span><strong>ファミリーコミットメント</strong>の男女差が賃金格差の大きな理由であることを、実証研究の例とともに説明できる</li>
+    <li><span class="gnum">G6</span>上方婚・下方婚の傾向が<strong>マッチング</strong>の結果をどう変えるかを説明し、自分の選択の問題として考えられる</li>
+  </ol>
+</section>
+
+<!-- STATUS -->
+<section id="status">
+  <h2 class="section-title"><span class="step-badge s-teal">現状</span>データで見る女性の働き方</h2>
+
+  <p>女性の働き方の現状はどのようなものか。またどのような施策が取られているのか。これを知るための基本資料が、厚生労働省「<strong>働く女性の実情</strong>」（令和7年版）である。以下の図表は、とくに明記しない場合はこの資料による。</p>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版 <a href="https://www.mhlw.go.jp/bunya/koyoukintou/josei-jitsujo/25.html" target="_blank" rel="noopener">mhlw.go.jp</a></p>
+
+  <h3>労働力人口に占める女性の割合</h3>
+  <div class="kv-grid">
+    <div class="kv"><div class="big">45.7<span style="font-size:13px;"> ％</span></div><div class="lbl">労働力人口に占める女性の割合（令和7年＝2025年）。昭和60年（1985年）の39.7％から一貫して上昇</div></div>
+    <div class="kv"><div class="big amber">3,200<span style="font-size:13px;"> 万人</span></div><div class="lbl">女性の労働力人口（労働力人口総数7,004万人のうち）。1985年は2,367万人</div></div>
+  </div>
+
+  <h3>年齢階級別の就業率 ― M字カーブは「台形」へ</h3>
+  <p>かつて日本の女性の就業率は、20代後半から30代にかけて結婚・出産で仕事を辞める人が多いために落ち込み、子育てが一段落すると再び上がる<strong>「M字カーブ」</strong>を描いていた。前回の事前学習で調べた人も多いだろう。最近のデータでは、その谷はほとんど消えている。</p>
+
+  <div class="static-graph">
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="女性の年齢階級別就業率。令和7年、令和6年、平成27年の比較">
+      <g font-family="JetBrains Mono, monospace" font-size="11" fill="#6b7280">
+        <line x1="50" y1="270" x2="660" y2="270" stroke="#9ca3af" stroke-width="1.2"/>
+        <line x1="50" y1="222" x2="660" y2="222" stroke="#eceae3"/>
+        <line x1="50" y1="174" x2="660" y2="174" stroke="#eceae3"/>
+        <line x1="50" y1="126" x2="660" y2="126" stroke="#eceae3"/>
+        <line x1="50" y1="78"  x2="660" y2="78"  stroke="#eceae3"/>
+        <line x1="50" y1="30"  x2="660" y2="30"  stroke="#eceae3"/>
+        <text x="42" y="274" text-anchor="end">0</text>
+        <text x="42" y="226" text-anchor="end">20</text>
+        <text x="42" y="178" text-anchor="end">40</text>
+        <text x="42" y="130" text-anchor="end">60</text>
+        <text x="42" y="82"  text-anchor="end">80</text>
+        <text x="42" y="34"  text-anchor="end">100</text>
+        <text x="14" y="18" font-size="11">(%)</text>
+      </g>
+      <g id="mCurve"></g>
+    </svg>
+    <div class="legend" style="justify-content:center;">
+      <span class="item"><span class="sw" style="background:#0e7490"></span>令和7年（2025年）</span>
+      <span class="item"><span class="sw" style="background:#9ca3af"></span>令和6年（2024年）</span>
+      <span class="item"><span class="sw" style="background:#b45309"></span>平成27年（2015年）</span>
+    </div>
+    <div class="caption">女性の年齢階級別就業率。令和7年の値を表示。点にカーソルを合わせると値が表示される</div>
+  </div>
+  <p class="src">資料：総務省「労働力調査」。出典：厚生労働省「働く女性の実情」令和7年版（スライドの数値から作図）</p>
+
+  <div class="callout">
+    <p>平成27年（2015年）には、25〜29歳の80.3％から30〜34歳で71.2％へと<strong>約9ポイント落ち込んでいた</strong>。令和7年（2025年）では25〜29歳の90.5％から30〜34歳の85.9％、35〜39歳の82.7％へと、谷は浅くなっている。<strong>出産・育児で仕事を辞める女性が減った</strong>ことが主な理由である。</p>
+  </div>
+
+  <h3>配偶者の有無は関係あるのか</h3>
+  <p>就業率を<strong>未婚</strong>と<strong>有配偶</strong>（配偶者がいる）に分けると、M字の谷の正体が見えてくる。未婚女性は以前から高い就業率だったが、有配偶女性の就業率は大きく上昇した。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>女性の就業率</th><th>25〜29歳</th><th>30〜34歳</th><th>35〜39歳</th><th>40〜44歳</th></tr></thead>
+      <tbody>
+        <tr><td class="lead">未婚・令和7年</td><td class="num-cell">93.6</td><td class="num-cell">91.7</td><td class="num-cell">88.5</td><td class="num-cell">86.8</td></tr>
+        <tr><td class="lead">有配偶・令和7年</td><td class="num-cell highlight">85.0</td><td class="num-cell highlight">82.0</td><td class="num-cell highlight">79.7</td><td class="num-cell">82.4</td></tr>
+        <tr><td class="lead">有配偶・平成27年</td><td class="num-cell">60.2</td><td class="num-cell">60.4</td><td class="num-cell">64.6</td><td class="num-cell">70.3</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">単位：％。出典：厚生労働省「働く女性の実情」令和7年版（スライドの図から主な値を抜粋）</p>
+  <div class="note">
+    <span class="tag">読み取り</span>
+    <p>有配偶女性の25〜29歳の就業率は、10年間で<strong>60.2％から85.0％へ約25ポイント</strong>も上がった。「M字の谷」は、主に<strong>結婚・出産した女性が仕事を辞めていた</strong>ことで生まれていたのであり、その行動が大きく変わったことがわかる。</p>
+  </div>
+
+  <h3>失業率と、雇用者が増えている産業</h3>
+  <div class="split">
+    <div class="card">
+      <h4>男女別の完全失業率（令和7年）</h4>
+      <p style="font-size:14px;">女性 <span class="readout">2.3％</span>、男性 <span class="readout">2.7％</span>。1990年代後半以降、<strong>女性の失業率は男性よりやや低い</strong>状態が続いている。年齢階級別に見ると、男女とも20代前半が高く、40代後半が低い。</p>
+    </div>
+    <div class="card">
+      <h4>産業別雇用者数の対前年増減（令和7年）</h4>
+      <p style="font-size:14px;">女性の雇用者が最も増えたのは<strong>医療，福祉（＋20万人）</strong>。教育，学習支援業（＋6万人）、宿泊業，飲食サービス業（＋6万人）が続く。一方、製造業では男性が12万人減少した。</p>
+    </div>
+  </div>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版 図表1-2-7、1-2-8、1-2-10</p>
+</section>
+
+<!-- EMPLOYMENT -->
+<section id="employment">
+  <h2 class="section-title"><span class="step-badge s-amber">雇用形態</span>非正規雇用・L字カーブ・勤続年数</h2>
+
+  <p>働く女性は増えた。では、<strong>どのような働き方</strong>で働いているのだろうか。</p>
+
+  <h3>非正規雇用の割合</h3>
+  <div class="kv-grid">
+    <div class="kv"><div class="big amber">52.0<span style="font-size:13px;"> ％</span></div><div class="lbl">女性雇用者に占める非正規雇用の割合（令和7年）。ピークは平成26年の56.6％</div></div>
+    <div class="kv"><div class="big">22.3<span style="font-size:13px;"> ％</span></div><div class="lbl">男性雇用者に占める非正規雇用の割合（令和7年）。男女計は36.5％</div></div>
+  </div>
+  <p>働く女性の<strong>半数以上が非正規雇用</strong>である。女性の非正規比率は2014年（平成26年）の56.6％をピークに少しずつ下がっているが、男性の2倍以上という構図は変わっていない。</p>
+
+  <h3>年齢階級別の正規雇用比率 ― 「L字カーブ」</h3>
+  <p>就業率のM字カーブが解消に向かう一方で、<strong>正規雇用で働く女性の割合</strong>を年齢別に見ると、別の形が現れる。</p>
+
+  <div class="static-graph">
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="女性の年齢階級別正規雇用比率。令和7年と平成27年の比較。25〜29歳をピークに年齢とともに低下するL字カーブ">
+      <g font-family="JetBrains Mono, monospace" font-size="11" fill="#6b7280">
+        <line x1="50" y1="270" x2="660" y2="270" stroke="#9ca3af" stroke-width="1.2"/>
+        <line x1="50" y1="210" x2="660" y2="210" stroke="#eceae3"/>
+        <line x1="50" y1="150" x2="660" y2="150" stroke="#eceae3"/>
+        <line x1="50" y1="90"  x2="660" y2="90"  stroke="#eceae3"/>
+        <line x1="50" y1="30"  x2="660" y2="30"  stroke="#eceae3"/>
+        <text x="42" y="274" text-anchor="end">0</text>
+        <text x="42" y="214" text-anchor="end">20</text>
+        <text x="42" y="154" text-anchor="end">40</text>
+        <text x="42" y="94"  text-anchor="end">60</text>
+        <text x="42" y="34"  text-anchor="end">80</text>
+        <text x="14" y="18" font-size="11">(%)</text>
+      </g>
+      <g id="lCurve"></g>
+    </svg>
+    <div class="legend" style="justify-content:center;">
+      <span class="item"><span class="sw" style="background:#0e7490"></span>令和7年（2025年）</span>
+      <span class="item"><span class="sw" style="background:#b45309"></span>平成27年（2015年）</span>
+    </div>
+    <div class="caption">女性の年齢階級別正規雇用比率（人口に占める正規の職員・従業員の割合）</div>
+  </div>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版 図表1-2-13（スライドの数値から作図）</p>
+
+  <div class="callout step2">
+    <p>正規雇用比率は<strong>25〜29歳の62.8％がピーク</strong>で、その後は年齢とともに下がり続け、50代後半では29.2％になる。いったん正社員を離れると、<strong>再び正社員として働くのは難しい</strong>。出産・育児で退職した女性の多くは、復帰するときにパートなどの非正規雇用を選ぶ（選ばざるを得ない）ためである。この形を、アルファベットになぞらえて<strong>「L字カーブ」</strong>と呼ぶ。</p>
+    <p>ただし10年前と比べると、30代以降の正規雇用比率もはっきり上がっている（30〜34歳で36.0％ → 54.2％）。<strong>正社員のまま働き続ける女性</strong>が増えていることも読み取れる。</p>
+  </div>
+
+  <h3>平均勤続年数</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>一般労働者の平均勤続年数（令和7年）</th><th>女性</th><th>男性</th><th>男女差</th></tr></thead>
+      <tbody>
+        <tr><td class="lead">正社員・正職員</td><td class="num-cell">10.7</td><td class="num-cell">14.4</td><td class="num-cell highlight">3.7</td></tr>
+        <tr><td class="lead">正社員・正職員以外</td><td class="num-cell">9.2</td><td class="num-cell">12.6</td><td class="num-cell highlight">3.4</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">単位：年。出典：厚生労働省「働く女性の実情」令和7年版 図表1-2-14</p>
+  <p>正社員の勤続年数の男女差は、20年間ほぼ<strong>4年前後</strong>で推移している。後で見るように、<strong>勤続年数の差は賃金格差の要因の一つ</strong>であり、さらに勤続年数が短くなりそうだと予想されること自体が、<strong>訓練機会の差</strong>を生む（<a class="inline-link" href="#human">06 人的資本</a>）。</p>
+</section>
+
+<!-- GAP -->
+<section id="gap">
+  <h2 class="section-title"><span class="step-badge s-teal">賃金格差</span>男女の賃金格差と管理職</h2>
+
+  <h3>男女の賃金は 100 対 76.6</h3>
+  <p>一般労働者（短時間労働者以外）の所定内給与額は、令和7年で<strong>男性37万3,400円、女性28万5,900円</strong>。男性を100とすると女性は<strong>76.6</strong>である。時間を通じて差は縮まってきたが、まだ格差は残る。</p>
+
+  <div class="static-graph">
+    <svg viewBox="0 0 680 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="一般労働者の所定内給与額の男女間賃金差異の推移（2005年から2025年、男性を100とした女性の値）">
+      <g font-family="JetBrains Mono, monospace" font-size="11" fill="#6b7280">
+        <line x1="50" y1="240" x2="660" y2="240" stroke="#9ca3af" stroke-width="1.2"/>
+        <line x1="50" y1="190" x2="660" y2="190" stroke="#eceae3"/>
+        <line x1="50" y1="140" x2="660" y2="140" stroke="#eceae3"/>
+        <line x1="50" y1="90"  x2="660" y2="90"  stroke="#eceae3"/>
+        <line x1="50" y1="40"  x2="660" y2="40"  stroke="#eceae3"/>
+        <text x="42" y="244" text-anchor="end">60</text>
+        <text x="42" y="194" text-anchor="end">65</text>
+        <text x="42" y="144" text-anchor="end">70</text>
+        <text x="42" y="94"  text-anchor="end">75</text>
+        <text x="42" y="44"  text-anchor="end">80</text>
+        <text x="14" y="24" font-size="11">(男性=100)</text>
+      </g>
+      <g id="gapLine"></g>
+    </svg>
+    <div class="caption">所定内給与額の男女間賃金差異（男性＝100としたときの女性の値）。点にカーソルを合わせると値が表示される</div>
+  </div>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版 図表1-4-3（資料：厚生労働省「賃金構造基本統計調査」）。令和2年に調査方法の変更あり</p>
+
+  <h3>なぜ賃金格差が発生するのか ― 要因の分解</h3>
+  <p>男女で<strong>役職・勤続年数・学歴・労働時間</strong>などの構成が違えば、それだけで平均賃金に差が出る。そこで「女性の役職の構成が男性と同じだったら」と仮定して計算し直すと（調整後）、格差がどれだけ縮むかがわかる。</p>
+
+  <div class="static-graph">
+    <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="男女間賃金差異の要因。調整前76.6に対し、役職で調整すると85.7、勤続年数79.9、学歴78.4、労働時間78.5、年齢77.0、企業規模76.6、産業75.4">
+      <g id="factorBars"></g>
+    </svg>
+    <div class="legend" style="justify-content:center;">
+      <span class="item"><span class="box" style="background:#e5e7eb"></span>調整前（原数値）76.6</span>
+      <span class="item"><span class="box" style="background:#0e7490"></span>調整で格差が縮小する分</span>
+      <span class="item"><span class="box" style="background:#b91c1c"></span>調整で格差が拡大する分</span>
+    </div>
+    <div class="caption">各要因について、女性の構成が男性と同じだと仮定したときの賃金差異（男性＝100）。単純分析なので各要因の効果は足し合わせられない</div>
+  </div>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版 図表1-4-4（一般労働者）</p>
+
+  <div class="callout">
+    <p>最も効くのは<strong>役職</strong>で、女性の役職構成が男性と同じなら格差は<strong>9.1ポイント縮小</strong>する。次いで<strong>勤続年数</strong>（3.3ポイント）、<strong>労働時間</strong>（1.9ポイント）、<strong>学歴</strong>（1.8ポイント）。つまり、賃金格差の背後には、<strong>女性が管理職に就いていない</strong>ことと、<strong>勤続年数が短い</strong>ことが大きく関わっている。逆に産業で調整すると格差はやや拡大する（女性は比較的賃金の高い産業にも多くいる）。</p>
+  </div>
+
+  <h3>短時間労働者の時給</h3>
+  <p>短時間労働者（パートなど）の1時間あたり所定内給与額は、令和7年で<strong>女性1,418円、男性1,769円</strong>、男性を100とすると女性は<strong>80.2</strong>である。短時間雇用者の約3分の2（令和7年で64.4％）は女性であり、短時間雇用者そのものも増え続けている（雇用者総数に占める割合は35.2％）。</p>
+  <p class="src">出典：厚生労働省「働く女性の実情」令和7年版。令和2年から集計方法の変更あり、平成30年までは時給が著しく高い一部の職種を集計対象から除いていた</p>
+
+  <h3>企業の役職者に占める女性の割合</h3>
+  <div class="kv-grid">
+    <div class="kv"><div class="big">25.2<span style="font-size:13px;"> ％</span></div><div class="lbl">係長級に占める女性の割合（2025年）。2001年は8.3％</div></div>
+    <div class="kv"><div class="big">16.1<span style="font-size:13px;"> ％</span></div><div class="lbl">課長級に占める女性の割合（2025年）。2001年は3.6％</div></div>
+    <div class="kv"><div class="big amber">9.3<span style="font-size:13px;"> ％</span></div><div class="lbl">部長級に占める女性の割合（2025年）。2001年は1.8％</div></div>
+    <div class="kv"><div class="big amber">17.7<span style="font-size:13px;"> ％</span></div><div class="lbl">東証プライム市場上場企業の女性役員の割合（2025年）。全上場企業では14.0％</div></div>
+  </div>
+  <p>上の役職ほど女性の割合は小さい。国際比較をすると、日本の特徴はさらにはっきりする。</p>
+
+  <div class="static-graph">
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="就業者と管理的職業従事者に占める女性の割合の国際比較">
+      <g id="mgrBars"></g>
+    </svg>
+    <div class="legend" style="justify-content:center;">
+      <span class="item"><span class="box" style="background:#cbd5e1"></span>就業者に占める女性の割合</span>
+      <span class="item"><span class="box" style="background:#1e3a8a"></span>管理的職業従事者に占める女性の割合</span>
+    </div>
+    <div class="caption">就業者・管理的職業従事者に占める女性の割合（％）</div>
+  </div>
+  <p class="src">出典：内閣府「令和8年版 男女共同参画白書」（スライドの数値から作図）</p>
+  <div class="note">
+    <span class="tag">読み取り</span>
+    <p>就業者に占める女性の割合は、日本（45.8％）も他国とほとんど変わらない。違うのは<strong>管理職に占める割合</strong>で、日本は<strong>14.4％</strong>と、欧米諸国の約3分の1にとどまる。働く女性の「数」の差ではなく、<strong>昇進</strong>の差が問題なのである。</p>
+  </div>
+
+  <h3>事例：メルカリの「説明できない男女間の賃金差異」</h3>
+  <p>2023年9月21日、株式会社メルカリは「Impact Report」で、世界標準と同じ手法を用いて社内の男女間賃金格差を分析・公表した。考え方は、上の要因分解と同じである。</p>
+  <div class="card">
+    <ul>
+      <li>組織内の男女の平均賃金の差（男女間賃金格差）は <span class="readout">37.5％</span></li>
+      <li>重回帰分析で役割・等級・職種などの違いを取り除くと、<strong>それでも説明できない格差</strong>（unexplained pay gap）が <span class="readout">約7％</span> 残っていた</li>
+      <li>主な要因は<strong>入社時年収の男女差</strong>（入社時点で説明できない格差が約9％）</li>
+      <li>個別の報酬調整を実施し、説明できない格差を <span class="readout">2.5％</span> まで縮小</li>
+    </ul>
+    <p style="font-size:13.5px;color:var(--muted);">世界標準の基準では、5％の有意水準で5％以上の「説明できない差異」があるとき、改善が必要とされる。</p>
+  </div>
+  <p class="src">出典：株式会社メルカリ「Impact Report FY2023.6」<a href="https://storage.googleapis.com/prd-about-asset-2020/2023/09/20e95c4f-fy2023.6-impact-report.pdf" target="_blank" rel="noopener">PDF</a></p>
+  <div class="callout step2">
+    <p>ここで大事なのは、37.5％という大きな格差の大部分は<strong>「説明できる差」</strong>（男女で等級の分布が違う）だということ。しかし説明できる差だからといって問題がないわけではない。<strong>なぜ女性が上の等級に少ないのか</strong>という問いが残る。以下では、その背後にある仕組みを、世帯内の分業・人的資本・ファミリーコミットメントの順に考えていく。</p>
+  </div>
+</section>
+
+<!-- HOUSEHOLD -->
+<section id="household">
+  <h2 class="section-title"><span class="step-badge s-amber">世帯内の分業</span>共働きと比較優位の原理</h2>
+
+  <h3>共働き世帯は専業主婦世帯の3倍以上に</h3>
+  <p>男性と女性で、結婚後の働き方に差があるのはなぜだろうか。まず世帯の姿を確認しよう。</p>
+  <div class="kv-grid">
+    <div class="kv"><div class="big">1,254<span style="font-size:13px;"> 万世帯</span></div><div class="lbl">雇用者の共働き世帯（妻64歳以下、2025年）。1985年は718万世帯</div></div>
+    <div class="kv"><div class="big amber">358<span style="font-size:13px;"> 万世帯</span></div><div class="lbl">男性雇用者と無業の妻から成る世帯（妻64歳以下、2025年）。1985年は936万世帯</div></div>
+  </div>
+  <p>1990年代に両者は逆転し、今では<strong>共働き世帯が多数派</strong>である。しかし、<strong>専業主婦はそれなりにいるが、専業主夫は珍しい</strong>。</p>
+  <p class="src">出典：内閣府「令和8年版 男女共同参画白書」</p>
+
+  <div class="note">
+    <span class="tag">注意</span>
+    <p>共働きであっても、<strong>妻が短時間労働</strong>であるケースが多い。2020年の妻64歳以下の世帯では、共働き世帯のうち<strong>妻がパート（週35時間未満）の世帯が617万</strong>、<strong>妻がフルタイム（週35時間以上）の世帯は466万</strong>であった。「共働き世帯が増えた」の中身の多くは、パートで働く妻の増加である。</p>
+    <p class="src" style="text-align:left;">出典：内閣府「結婚と家族をめぐる基礎データ」（令和4年）</p>
+  </div>
+
+  <h3>ライフコースの希望はどう変わったか</h3>
+  <p>国立社会保障・人口問題研究所「出生動向基本調査」では、18〜34歳の未婚の男女に、女性のライフコースについて尋ねている。</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th rowspan="2">コース</th><th colspan="2">未婚女性の理想</th><th colspan="2">未婚男性がパートナーに期待</th></tr>
+        <tr><th>1987年</th><th>2021年</th><th>1987年</th><th>2021年</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lead">両立コース（結婚・出産後も仕事を続ける）</td><td class="num-cell">18.5</td><td class="num-cell highlight">34.0</td><td class="num-cell">10.5</td><td class="num-cell highlight">39.4</td></tr>
+        <tr><td class="lead">再就職コース（いったん退職し、子育て後に再就職）</td><td class="num-cell">31.1</td><td class="num-cell">26.1</td><td class="num-cell">38.3</td><td class="num-cell">29.0</td></tr>
+        <tr><td class="lead">専業主婦コース</td><td class="num-cell">33.6</td><td class="num-cell">13.8</td><td class="num-cell">37.9</td><td class="num-cell">6.8</td></tr>
+        <tr><td class="lead">非婚就業コース</td><td class="num-cell">3.7</td><td class="num-cell">12.2</td><td class="num-cell" colspan="2" style="color:var(--muted);">（省略）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">単位：％。出典：内閣府「令和5年版 男女共同参画白書」（資料：国立社会保障・人口問題研究所「出生動向基本調査」）</p>
+  <div class="callout">
+    <p>2021年には、<strong>男性がパートナーに期待するコースの1位が「両立コース」（39.4％）</strong>となり、専業主婦を望む男性は6.8％にまで減った。女性自身の理想よりも、男性の期待のほうが「両立」に寄っている点も興味深い。</p>
+  </div>
+
+  <h3>世帯内の分業 ― 比較優位の原理</h3>
+  <p>では、なぜ世帯の中で「仕事を主に担う人」と「家事を主に担う人」に分かれるのだろうか。経済学の基本的な道具である<strong>比較優位の原理</strong>で考えてみよう。</p>
+  <div class="card">
+    <p style="margin-top:0;">AとBの2人が同居している。必要な家事は<strong>掃除</strong>と<strong>料理</strong>の2つ。それぞれにかかる時間は次のとおり。</p>
+    <div class="table-wrap">
+      <table style="max-width:420px;margin:10px auto;">
+        <thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+        <tbody>
+          <tr><td class="lead">掃除</td><td class="num-cell">20分</td><td class="num-cell">50分</td></tr>
+          <tr><td class="lead">料理</td><td class="num-cell">30分</td><td class="num-cell">40分</td></tr>
+          <tr><td class="lead">合計（自分のことは自分で）</td><td class="num-cell">50分</td><td class="num-cell">90分</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A は掃除も料理も B より速い（<strong>絶対優位</strong>）。それでも分業する意味はあるだろうか。各自が<strong>比較優位</strong>のある仕事を2人分担当する。2人分になっても現実には時間は2倍にはならないが、ここでは<strong>2倍かかる</strong>とする。</p>
+    <div class="table-wrap">
+      <table style="max-width:420px;margin:10px auto;">
+        <thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+        <tbody>
+          <tr><td class="lead">掃除</td><td class="num-cell">20×2 分</td><td class="num-cell">0分</td></tr>
+          <tr><td class="lead">料理</td><td class="num-cell">0分</td><td class="num-cell">40×2 分</td></tr>
+          <tr><td class="lead">合計</td><td class="num-cell highlight">50 → 40分</td><td class="num-cell highlight">90 → 80分</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>それでも<strong>2人とも家事労働にかかる時間を減らせる</strong>。</p>
+  </div>
+
+  <p>なぜ A が掃除なのか。ポイントは<strong>機会費用</strong>である。掃除にかかる時間を料理にかかる時間と比べると</p>
+  <div class="math-block">
+    $$\text{A：}\ \frac{20}{30} \approx 0.67 \qquad\qquad \text{B：}\ \frac{50}{40} = 1.25$$
+  </div>
+  <p>A が掃除をすることは、料理を 0.67 回分あきらめることに相当するが、B が掃除をすると料理を 1.25 回分あきらめることになる。<strong>掃除の機会費用は A のほうが小さい</strong>ので A は掃除に、<strong>料理の機会費用は B のほうが小さい</strong>（$40/50 = 0.8 &lt; 30/20 = 1.5$）ので B は料理に比較優位を持つ。下の図で時間を変えて確かめてみよう。</p>
+
+  <div class="graph-wrap">
+    <div class="graph-title">世帯内の分業シミュレーター ― 誰が何を担当すると時間が減るか</div>
+    <svg id="caSvg" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AとBの家事時間を、自分のことは自分で行う場合と、分業する場合で比べる棒グラフ" style="display:block;width:100%;height:auto;"></svg>
+    <div class="controls">
+      <div class="control">
+        <label for="caAc">A の掃除：<span class="readout" id="caAcOut">20 分</span></label>
+        <input type="range" id="caAc" min="5" max="80" step="5" value="20">
+      </div>
+      <div class="control">
+        <label for="caAk">A の料理：<span class="readout" id="caAkOut">30 分</span></label>
+        <input type="range" id="caAk" min="5" max="80" step="5" value="30">
+      </div>
+      <div class="control">
+        <label for="caBc">B の掃除：<span class="readout" id="caBcOut">50 分</span></label>
+        <input type="range" id="caBc" min="5" max="80" step="5" value="50">
+      </div>
+      <div class="control">
+        <label for="caBk">B の料理：<span class="readout" id="caBkOut">40 分</span></label>
+        <input type="range" id="caBk" min="5" max="80" step="5" value="40">
+      </div>
+    </div>
+    <div class="legend">
+      <span class="item"><span class="box" style="background:#0e7490"></span>掃除</span>
+      <span class="item"><span class="box" style="background:#b45309"></span>料理</span>
+    </div>
+    <div class="verdict" id="caVerdict"></div>
+  </div>
+
+  <div class="callout step2">
+    <p>この原理を<strong>家事</strong>と<strong>市場労働</strong>に置き換えると、世帯内の分業が説明できる。市場での賃金が高い人ほど、家事をすることの機会費用（あきらめる賃金）が大きい。もし夫のほうが賃金が高ければ、<strong>夫が市場労働、妻が家事</strong>に比較優位を持つことになる。</p>
+    <p>しかし注意が必要である。賃金が高いのは夫が長く働き訓練を受けてきたからで、それは「妻が家事を担う」という予想があったからかもしれない。<strong>分業の予想が賃金格差を生み、賃金格差が分業を正当化する</strong>という循環がありうる。また、分業は2人の時間の合計を減らすが、<strong>家事に特化した人は市場での人的資本を蓄積できない</strong>ため、離婚や死別のときに不利になる。</p>
+  </div>
+</section>
+
+<!-- REGION -->
+<section id="region">
+  <h2 class="section-title"><span class="step-badge s-teal">地域差</span>都道府県で女性就業率が違う理由</h2>
+
+  <p>女性の就業率は地域によって大きく違う。国勢調査で見ると、2015年の全国の女性就業率は<strong>64.7％</strong>だが、都道府県別では<strong>福井県・富山県・島根県・鳥取県・石川県・山形県</strong>などが高く、<strong>奈良県・兵庫県・大阪府・神奈川県</strong>など大都市圏やその周辺が低い。最も高い県と低い県の差は15ポイント以上ある。</p>
+  <p class="src">出典：内閣府「令和元年版 男女共同参画白書」（資料：総務省「国勢調査」）。全国値は2000年55.7％、2005年56.7％、2010年60.6％、2015年64.7％</p>
+
+  <div class="discuss">
+    <div class="discuss-head"><span class="discuss-tag">話し合ってみよう</span></div>
+    <div class="discuss-q">地域によって女性の就業率が違うのはなぜだろうか。北陸・山陰で高く、大都市圏で低い理由を考えてみよう。</div>
+    <div class="discuss-hint">
+      <details>
+        <summary>考えるヒント</summary>
+        <div class="body">
+          <ul>
+            <li><strong>三世代同居</strong>：祖父母が同居・近居していれば、子育てや家事を分担しやすい。三世代同居率が高い地域では、女性の就業率も高い傾向がある。</li>
+            <li><strong>通勤時間</strong>：大都市圏では通勤時間が長く、子育てと仕事の両立が難しい。</li>
+            <li><strong>世帯所得</strong>：大都市圏では夫の賃金が比較的高く、妻が働かなくても生活できる世帯が多い（前期の消費余暇モデルで、労働以外の収入 $y$ が大きいほど働かない選択をしやすい）。</li>
+            <li><strong>保育所の利用しやすさ</strong>や、地域の<strong>産業構造</strong>（製造業・医療福祉など女性の働く場の多さ）、地域の<strong>社会規範</strong>。</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>スライドの地図で示したとおり、<strong>三世代同居率が高い地域では女性就業率も高い</strong>。これは、前節の比較優位の議論を<strong>世帯の外</strong>に広げたものと考えられる。家事・育児を担える人が世帯内に多ければ、女性が市場労働をする機会費用は小さくなる。ただし、三世代同居率の高さと女性就業率の高さは<strong>相関</strong>であり、通勤時間や地域の産業など、他の要因が両方に影響している可能性もある。</p>
+  </div>
+</section>
+
+<!-- HUMAN CAPITAL -->
+<section id="human">
+  <h2 class="section-title"><span class="step-badge s-amber">人的資本</span>人的資本投資と企業特殊的訓練</h2>
+
+  <h3>人的資本理論と賃金格差</h3>
+  <p>前期に学んだように、<strong>学校教育や職業訓練は人的資本投資</strong>である。</p>
+  <div class="card">
+    <ul>
+      <li>男女で<strong>期待収益が違えば</strong>、人的資本投資の行動にも違いが生まれる。</li>
+      <li>人的資本投資の行動が違えば、結果として労働市場で<strong>男女間格差が観察される</strong>。</li>
+      <li>誰が投資をするのか？ 本人だけでなく、<strong>子どもの性別に応じて親が投資を変える</strong>可能性もある。</li>
+    </ul>
+  </div>
+  <p>ただし、男女間で人的資本投資の行動に差がある理由は、期待収益の違いだけとは限らない。</p>
+  <ul>
+    <li><strong>家計生産における役割分担</strong>（外でお金を稼ぐのと、家庭内の仕事を分担している）</li>
+    <li><strong>性別役割分担意識</strong></li>
+    <li><strong>社会規範</strong></li>
+  </ul>
+
+  <h3>学歴の違い ― ストックとフロー</h3>
+  <div class="split">
+    <div class="card">
+      <h4>ストックとしての違い</h4>
+      <p style="font-size:14px;">現在の人口全体で見ると、大卒または大学院卒は<strong>男性のおよそ30％</strong>、<strong>女性のおよそ14％</strong>。過去の進学率の差が、今の労働者の学歴構成に残っている。</p>
+    </div>
+    <div class="card">
+      <h4>フローとしての違い</h4>
+      <p style="font-size:14px;">今の大学進学率にも男女差があり、<strong>男性のほうが高い</strong>（地域によっても差がある）。さらに専攻にも違いがあり、男女ともに社会科学系が多いが、<strong>工学系に男性</strong>が多く、<strong>人文科学・保健・教育などに女性</strong>が多い。</p>
+    </div>
+  </div>
+
+  <h3>職業能力開発 ― Off-JT の男女差</h3>
+  <p>職業訓練には、仕事をしながら学ぶ <strong>OJT</strong>（On-the-Job Training）と、職場を離れて研修などで学ぶ <strong>Off-JT</strong>（Off-the-Job Training）がある。Off-JT を受けた雇用者の割合は、男女で異なる。</p>
+  <div class="table-wrap">
+    <table style="max-width:520px;">
+      <thead><tr><th>Off-JTを受けた雇用者の割合</th><th>男性</th><th>女性</th></tr></thead>
+      <tbody>
+        <tr><td class="lead">正社員</td><td class="num-cell">50.7</td><td class="num-cell highlight">36.9</td></tr>
+        <tr><td class="lead">正社員以外</td><td class="num-cell">29.6</td><td class="num-cell highlight">19.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">単位：％（スライドの数値）</p>
+  <p>Off-JT の<strong>内容</strong>も違う。男性は<strong>管理者向け研修やロジカルシンキング</strong>、女性は<strong>ビジネスマナーや社内手続き</strong>についてなど。研修への派遣や研修内容は本人が決めるわけではなく、<strong>会社が決める</strong>（本人の意向を確認することもある）。では、会社はなぜ男女で訓練を変えるのだろうか。</p>
+
+  <h3>企業特殊的訓練への共同投資</h3>
+  <p>スキル（仕事をする上で必要な技能）には、どの会社でも役立つ<strong>一般的スキル</strong>と、その会社でしか役立たない<strong>企業特殊的スキル</strong>がある。後者に注目すると、<strong>企業と労働者の双方が訓練費用を負担する</strong>ことになる（前期の人的資本の回を思い出そう）。</p>
+  <div class="card">
+    <ul>
+      <li><strong>$Y$ → $Y'$</strong>：この会社での生産性。訓練を受けるにつれて上がっていく。</li>
+      <li><strong>$U$ → $U'$</strong>：他の会社に移ったときに得られる賃金（外部機会）。企業特殊的スキルは他社では役立たないので、一定のまま。</li>
+      <li><strong>$W$ → $W'$</strong>：この会社が支払う賃金。$Y$ と $U$ の間に設定される。</li>
+      <li>点 $A$（時点 $t'$）より前は $Y &lt; U$：訓練期間であり、<strong>企業は $W-Y$、労働者は $U-W$ だけ費用を負担</strong>する。</li>
+      <li>$t'$ より後は $Y &gt; U$：投資の収益期間であり、<strong>企業は $Y-W$、労働者は $W-U$ だけ収益を得る</strong>。</li>
+    </ul>
+  </div>
+  <p>ここで、<strong>途中で就業を中断する</strong>可能性を考える。時点 $t_1$ から $t_2$ の期間は就業を中断し、復帰する際には<strong>別の会社</strong>で働く可能性がある。すると $t_1$ 以降の収益は、企業にとっても労働者にとっても<strong>失われる</strong>。下の図で $t_1$ を動かしてみよう。</p>
+
+  <div class="graph-wrap">
+    <div class="graph-title">企業特殊的訓練への共同投資 ― 就業中断の時点 $t_1$ と投資の回収</div>
+    <canvas id="fsCanvas" aria-label="横軸に勤続年数、縦軸に賃金と生産性をとり、企業特殊的訓練の費用と収益、就業中断で失われる収益を示す図"></canvas>
+    <div class="controls">
+      <div class="control">
+        <label for="fsT1">就業を中断する時点 $t_1$：<span class="readout" id="fsT1Out">40 年目</span></label>
+        <input type="range" id="fsT1" min="1" max="40" step="0.5" value="40">
+      </div>
+      <div class="control">
+        <label for="fsS">労働者の負担・収益の割合 $s$：<span class="readout" id="fsSOut">0.40</span></label>
+        <input type="range" id="fsS" min="0.1" max="0.9" step="0.05" value="0.4">
+      </div>
+    </div>
+    <div class="legend">
+      <span class="item"><span class="sw" style="background:#b45309"></span>生産性 $Y$</span>
+      <span class="item"><span class="sw" style="background:#0e7490"></span>賃金 $W$</span>
+      <span class="item"><span class="sw" style="background:#1e3a8a"></span>外部機会 $U$</span>
+      <span class="item"><span class="box" style="background:rgba(185,28,28,.18)"></span>訓練費用</span>
+      <span class="item"><span class="box" style="background:rgba(4,120,87,.18)"></span>回収できた収益</span>
+      <span class="item"><span class="box" style="background:rgba(107,114,128,.20)"></span>中断で失われる収益</span>
+    </div>
+    <div class="verdict" id="fsVerdict"></div>
+  </div>
+  <p class="src">注：曲線の形と数値は説明のための仮の設定（$U=4$、$Y$ は 2 から 10 へ上昇、$W = U + s(Y-U)$）である。</p>
+
+  <div class="callout step2">
+    <p>中断が早いほど、訓練費用を回収できなくなる。図の設定では、<strong>約11年より前に中断すると、企業も労働者も赤字</strong>になる。$s$ を動かしても損益分岐の時点は変わらないことにも注目しよう。費用も収益も同じ割合で分け合っているからである。</p>
+    <p>ここで、企業が<strong>「女性のほうが就業を中断する可能性が高い」</strong>と予想しているとしよう。すると企業は、女性への企業特殊的訓練を<strong>割に合わない投資</strong>と考え、女性には訓練を行わない（ビジネスマナーなど短期で回収できる研修にとどめる）。訓練を受けなければ生産性は上がらず、賃金も昇進も遅れ、それがさらに「女性は辞める」という予想を強める ― <strong>統計的差別と予言の自己実現</strong>の構造である。個々の女性がどれだけ長く働くつもりでも、平均で判断されてしまう点が問題になる。</p>
+  </div>
+</section>
+
+<!-- FAMILY COMMITMENT -->
+<section id="family">
+  <h2 class="section-title"><span class="step-badge s-teal">ファミリー<br>コミットメント</span>同じ職場・同じ制度でも差が出る</h2>
+
+  <h3>高学歴層：MBA修了者の追跡調査</h3>
+  <p>同じ大学のMBA出身者や、弁護士などの有資格者の賃金を男女で比べても、やはり格差が存在している。Bertrand, Goldin and Katz（2010）はシカゴ大学のMBA修了者を追跡した。</p>
+  <div class="card">
+    <ul>
+      <li><strong>MBA修了直後の男女の年収はほぼ同じ</strong>だが、<strong>10年以上経つと女性の年収は男性の約55％</strong>まで開く。</li>
+      <li>格差の大部分は、<strong>MBA前の訓練・成績、就業中断、週労働時間の違い</strong>で説明できる。</li>
+      <li>中断と短時間勤務の主因は<strong>子育て</strong>である。</li>
+    </ul>
+  </div>
+  <p>これは子育てと関連して発生しやすい男女間の違いであり、<strong>家族に対して負う責任・時間（ファミリーコミットメント）に男女差がある</strong>ことが、賃金格差の理由と考えられる。</p>
+
+  <h3>高学歴層以外：電車とバスの運転士</h3>
+  <p>Bolotnyy and Emanuel（2022, <i>Journal of Labor Economics</i>）が対象にしたのは、ボストンの公共交通機関で働く<strong>電車とバスの運転士</strong>である。この職場は労働組合があり、<strong>業務・賃金・昇進スケジュールが制度上、男女同一</strong>である。</p>
+  <div class="card">
+    <ul>
+      <li>それでも<strong>女性の週当たり所得は男性の約89％</strong>にとどまる。</li>
+      <li>この格差は、<strong>女性の残業時間が少なく、無給休暇が多い</strong>ことで説明できる。</li>
+      <li>とくに<strong>扶養家族のいる女性</strong>ほど、スケジュールの<strong>予測可能性</strong>と<strong>自己裁量</strong>を重視している。</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <p>時給が同じでも、<strong>急な残業を引き受けられるか</strong>、<strong>予定どおりに帰れることを優先するか</strong>で所得は変わる。制度上の差別がない職場でも格差が生まれるという事実は、格差の原因が<strong>職場の外（家庭での役割）</strong>にもあることを示している。ゴールディンは、長時間・柔軟性の低い働き方に大きなプレミアムが付く仕事（greedy work）ほど男女格差が大きくなることを強調している。</p>
+  </div>
+
+  <h3>夫婦の年収の組み合わせ</h3>
+  <p>総務省「就業構造基本調査」（2017年）から、30〜49歳の夫婦の年収の組み合わせを見てみよう（夫婦とも有業者）。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>夫の年収</th><th>300万円台</th><th>500万円台</th><th>700万円台</th><th>900万円台</th><th>1,000万円以上</th></tr></thead>
+      <tbody>
+        <tr><td class="lead">妻の年収が100万円未満の割合</td><td class="num-cell">29.1</td><td class="num-cell">33.0</td><td class="num-cell">38.6</td><td class="num-cell highlight">39.9</td><td class="num-cell highlight">39.9</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>妻の年収</th><th>300万円台</th><th>500万円台</th><th>700万円台</th><th>900万円台</th><th>1,000万円以上</th></tr></thead>
+      <tbody>
+        <tr><td class="lead">夫の年収が1,000万円以上の割合</td><td class="num-cell">4.9</td><td class="num-cell">7.3</td><td class="num-cell">16.1</td><td class="num-cell highlight">44.7</td><td class="num-cell highlight">50.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">単位：％。出典：総務省「就業構造基本調査」（2017年）、夫婦有業者ベース・家族従業者除く（スライドの表から抜粋）</p>
+  <div class="note">
+    <span class="tag">読み取り</span>
+    <p>夫の年収がどの水準でも、妻の年収で最も多いのは<strong>100万円未満</strong>であり、夫の年収が高いほどその割合は高い（世帯内の分業）。一方、<strong>年収の高い妻の夫は、年収も高い</strong>。妻が1,000万円以上なら、夫の半数（50.5％）も1,000万円以上である。これは次の節の「配偶者の選択」と関わる。</p>
+  </div>
+</section>
+
+<!-- SPOUSE -->
+<section id="spouse">
+  <h2 class="section-title"><span class="step-badge s-amber">配偶者の選択</span>女性の活躍と配偶者の選択</h2>
+
+  <p>ファミリーコミットメントの男女差が賃金格差の大きな理由だとすれば、<strong>誰と結婚するか</strong>は、仕事の面でも重要な選択になる。</p>
+  <div class="card">
+    <ul>
+      <li>仕事を続けたいと考える女性は、<strong>どんな男性と結婚すれば良いのか</strong>。</li>
+      <li>配偶者に仕事を続けてもらいたいと考える男性は、<strong>どんな女性と結婚すれば良いのか</strong>。</li>
+      <li><strong>上方婚と下方婚の傾向</strong>がある場合、どのようなマッチングが実現するか？</li>
+    </ul>
+  </div>
+
+  <h3>上方婚の傾向とマッチング</h3>
+  <p>男女それぞれを、学歴や所得などで 1（高い）〜 3（低い）に並べる。もし<strong>女性は自分より上の男性と結婚する（上方婚）</strong>、<strong>男性は自分より下の女性と結婚する（下方婚）</strong>という傾向があると、どうなるだろうか。</p>
+
+  <div class="graph-wrap">
+    <div class="graph-title">結婚のマッチング ― 傾向を切り替えてみよう</div>
+    <div style="margin-bottom:10px;">
+      <div class="seg" id="mtSeg">
+        <button type="button" data-k="hyper" class="on">上方婚の傾向（スライドの図）</button>
+        <button type="button" data-k="homo">同類婚</button>
+        <button type="button" data-k="hypo">女性の下方婚も可</button>
+      </div>
+    </div>
+    <svg id="mtSvg" viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="男性1から3と女性1から3のマッチングを線で結んだ図" style="display:block;width:100%;max-width:560px;height:auto;margin:0 auto;"></svg>
+    <div class="verdict" id="mtVerdict"></div>
+  </div>
+
+  <div class="callout">
+    <p>上方婚の傾向が強いと、<strong>最上位の女性</strong>（相手として「上」の男性がいない）と<strong>最下位の男性</strong>（相手として「下」の女性がいない）が<strong>マッチできずに残る</strong>。高学歴・高所得の女性ほど結婚しにくく、低学歴・低所得の男性ほど結婚しにくいという構図である。</p>
+  </div>
+
+  <h3>実証研究：学歴の勾配の反転</h3>
+  <p>Fukuda, Raymo and Yoda（2020, <i>Journal of Marriage and Family</i>）によると、日本では女性の初婚における<strong>学歴の負の勾配</strong>（高学歴ほど結婚しにくい）は<strong>2005年までに消え</strong>、<strong>2009年以降は正の勾配</strong>（高学歴ほど結婚しやすい）に転じている。高学歴女性の結婚率の上昇は、<strong>女性の学歴下方婚（自分より学歴の低い男性との結婚）が増えた</strong>ことによるものである。</p>
+  <div class="note">
+    <span class="tag">つながり</span>
+    <p>上の図で「女性の下方婚も可」に切り替えると、残っていた最上位の女性もマッチできるようになる。また、仕事を続けたい女性にとっては、<strong>自分と同じかそれ以上に家事・育児を担ってくれる相手</strong>（サポート役に回ってくれる人）と結婚することが、キャリアの面で重要になりうる。これが検討課題1・2の問いにつながる。</p>
+  </div>
+</section>
+
+<!-- TASK -->
+<section id="task">
+  <h2 class="section-title"><span class="step-badge s-teal">検討課題</span>検討課題 ― 自分の選択として考える</h2>
+
+  <div class="steps3">
+    <div class="stepbox">
+      <div class="sn">1</div>
+      <div class="st">一人で考える</div>
+      <div class="sd">まず自分の考えを回答欄に書き出す。箇条書きでよい。</div>
+    </div>
+    <div class="stepbox">
+      <div class="sn">2</div>
+      <div class="st">グループで比べる</div>
+      <div class="sd">男女で、また人によって考えがどう違うかを確認しながら話し合う。</div>
+    </div>
+    <div class="stepbox">
+      <div class="sn">3</div>
+      <div class="st">理論とつなげる</div>
+      <div class="sd">比較優位、人的資本、ファミリーコミットメント、マッチングのどれで説明できるかを考える。</div>
+    </div>
+  </div>
+
+  <h3>検討課題1 ― 配偶者の選択</h3>
+  <div class="card">
+    <ul>
+      <li>多くの人は、<strong>現時点での自分の希望</strong>を前提として、選択できる範囲で交際相手や結婚相手を決める。</li>
+      <li>しかし<strong>環境は変わるし、好みも変わる</strong>。</li>
+      <li>選択が可能な環境であれば、<strong>今の自分だけでなく将来の姿も考えて</strong>決める必要がある。</li>
+    </ul>
+    <p style="font-size:15px;font-weight:700;color:var(--ink);">皆さんは、結婚するならどんな人としたいですか？</p>
+  </div>
+  <div class="answer-box">
+    <div class="answer-head"><span class="answer-tag">あなたの考え</span><span class="answer-id">TASK 1</span></div>
+    <div class="answer-q">結婚するならどんな人としたいか。今の自分の希望と、10年後・20年後の自分（仕事・子育て・住む場所など）を想像したうえでの希望を、分けて書いてみよう。</div>
+    <textarea class="answer-input" data-qid="t1" placeholder="今の自分の希望：&#10;将来の姿を考えたうえでの希望：&#10;両者が違う点・その理由："></textarea>
+    <span class="answer-save" data-for="t1">未保存</span>
+  </div>
+
+  <h3>検討課題2 ― 女性の活躍と配偶者の選択</h3>
+  <p><strong>仕事面で活躍したいが、子どもも持ちたい</strong>と考える女性にできることは何だろうか。スライドでは次のような例を挙げた。</p>
+  <div class="card">
+    <ul>
+      <li><strong>人的資本投資</strong>をしっかりと行う</li>
+      <li>結婚するなら、<strong>サポート役に回ってくれる男性</strong>と結婚する</li>
+      <li><strong>競争に積極的に参加</strong>する</li>
+      <li>家庭での家事労働をできるだけ<strong>機械化・外注</strong>する
+        <ul>
+          <li>家電を有効活用する（ドラム式洗濯乾燥機、ロボット型掃除機、食器洗浄乾燥機を導入）</li>
+          <li>自宅は機械を使いやすい設計に</li>
+          <li>外注をしやすい地域に住居を構える</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="discuss-hint" style="margin:-4px 0 10px;">
+    <details>
+      <summary>本日の理論とのつながり</summary>
+      <div class="body">
+        <p><strong>人的資本投資</strong>：賃金が高くなるほど、家事をすることの機会費用が大きくなり、家事の外注や機械化が割に合うようになる。また、企業から「長く働く人」と見てもらえれば、企業特殊的訓練の機会も得やすい。</p>
+        <p><strong>サポート役に回ってくれる配偶者</strong>：世帯内の分業（比較優位）を、性別ではなく<strong>2人の状況</strong>で決められる相手を選ぶということ。ファミリーコミットメントを夫婦でどう分けるかの問題でもある。</p>
+        <p><strong>機械化・外注</strong>：家事にかかる時間そのものを減らし、世帯全体のファミリーコミットメントを小さくする。三世代同居の議論と同じく、家事・育児の担い手を世帯の外に広げる発想である。</p>
+      </div>
+    </details>
+  </div>
+  <div class="answer-box">
+    <div class="answer-head"><span class="answer-tag">あなたの考え</span><span class="answer-id">TASK 2</span></div>
+    <div class="answer-q">上の例の他に、どのような視点が必要だろうか。本人ができること、配偶者ができること、企業や政府ができることに分けて考えてみよう。</div>
+    <textarea class="answer-input" data-qid="t2" placeholder="本人ができること：&#10;配偶者ができること：&#10;企業・政府ができること："></textarea>
+    <span class="answer-save" data-for="t2">未保存</span>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <h2 class="section-title"><span class="step-badge summary">SUMMARY</span>まとめと次回までの課題</h2>
+
+  <h3>本日の流れ</h3>
+  <ul>
+    <li><strong>現状</strong>：労働力人口に占める女性の割合は45.7％。結婚・出産で仕事を辞める女性が減り、就業率の<strong>M字カーブはほぼ台形</strong>になった。とくに有配偶女性の就業率が大きく上がった。</li>
+    <li><strong>雇用形態</strong>：働く女性の<strong>52.0％が非正規雇用</strong>。正規雇用比率は25〜29歳がピークで、その後は下がり続ける<strong>L字カーブ</strong>を描く。勤続年数の男女差は約4年。</li>
+    <li><strong>賃金格差</strong>：一般労働者の男女の賃金は<strong>100対76.6</strong>。<strong>役職</strong>の違いが最大の要因で、次いで<strong>勤続年数</strong>。日本の管理職に占める女性の割合は<strong>14.4％</strong>と国際的に低い。</li>
+    <li><strong>世帯内の分業</strong>：共働き世帯は専業主婦世帯の3倍以上だが、妻がパートの世帯が多い。<strong>比較優位の原理</strong>で分業は家事時間を減らすが、分業の予想が賃金格差を生む循環もある。</li>
+    <li><strong>人的資本</strong>：学歴・専攻・Off-JTに男女差がある。<strong>企業特殊的訓練</strong>は企業と労働者の共同投資であり、<strong>就業中断の可能性</strong>が高いと見なされると訓練機会が与えられにくい。</li>
+    <li><strong>ファミリーコミットメント</strong>：MBA修了者でも、制度上同一の運転士の職場でも格差が生まれる。主な原因は<strong>子育てに伴う中断・労働時間・柔軟性</strong>の違いである。</li>
+    <li><strong>配偶者の選択</strong>：上方婚の傾向は、高学歴女性と低学歴男性がマッチしにくい構図を生む。近年は女性の学歴下方婚が増え、高学歴女性ほど結婚しやすくなった。</li>
+  </ul>
+
+  <div class="callout">
+    <p>今回の通奏低音は、<strong>「労働市場の男女格差は、家庭の中での分担と切り離せない」</strong>ということ。企業が女性に訓練を行わないのも、女性が残業を避けるのも、その背後には<strong>世帯内の分業</strong>とその予想がある。だからこそ、格差を縮めるには職場の制度だけでなく、<strong>家事・育児の分担、家事の機械化・外注、配偶者の選択</strong>といった家庭の側の変化も重要になる。</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">次回までの課題</span>
+    <p>次回は、<strong>外国人労働者と移民</strong>について考えたい。</p>
+    <p><strong>事前学習：</strong></p>
+    <ul style="margin:6px 0;">
+      <li>外国人労働者の受け入れについて、<strong>現時点でどのような法制度やルールがあるのか</strong>を調べておく。</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <span class="tag">メモ</span>
+    <p>検討課題の回答欄に記入した内容は、ブラウザ内（localStorage）に自動で保存されます。同じ端末・同じブラウザでこのページを再度開けば、続きから読み直せます。</p>
+  </div>
+</section>
+
+<div class="footer">
+  労働経済論 後期第3回「女性の労働と男性の労働」補助教材<br>
+  日本大学 経済学部 / 安藤至大
+</div>
+
+</div>
+
+<script>
+/* =========================================
+   前回の穴埋め：答えの表示／非表示
+   ========================================= */
+(function () {
+  const btn = document.getElementById("fillToggle");
+  const card = document.getElementById("fillCard");
+  btn.addEventListener("click", () => {
+    const hidden = card.classList.toggle("fills-hidden");
+    btn.textContent = hidden ? "答えを表示する" : "答えを隠す";
+  });
+})();
+
+/* =========================================
+   静的SVGグラフ（データから生成）
+   ========================================= */
+const SVGNS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text !== undefined) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const AGES = ["15〜19", "20〜24", "25〜29", "30〜34", "35〜39", "40〜44", "45〜49", "50〜54", "55〜59", "60〜64", "65以上"];
+
+/* 年齢階級別の折れ線（M字・L字共通） */
+function ageLines(gid, series, Y, labelIdx) {
+  const g = document.getElementById(gid);
+  const X = i => 80 + 560 * i / 10;
+  AGES.forEach((a, i) => {
+    el("text", { x: X(i), y: 288, "font-size": 10.5, fill: "#6b7280", "text-anchor": "middle" }, g, a);
+  });
+  el("text", { x: 360, y: 312, "font-size": 11.5, fill: "#6b7280", "text-anchor": "middle" }, g, "年齢階級（歳）");
+  series.forEach(s => {
+    el("polyline", { points: s.v.map((v, i) => `${X(i)},${Y(v)}`).join(" "), fill: "none", stroke: s.col, "stroke-width": s.w || 2, "stroke-dasharray": s.dash || "", "stroke-linejoin": "round" }, g);
+    s.v.forEach((v, i) => {
+      if (v == null) return;
+      el("circle", { cx: X(i), cy: Y(v), r: s.r || 3.5, fill: s.col, stroke: "#fff", "stroke-width": 1.5 }, g);
+      const hit = el("circle", { cx: X(i), cy: Y(v), r: 9, fill: "transparent" }, g);
+      el("title", {}, hit, `${s.name} ${AGES[i]}歳：${v}%`);
+      if (s.label) {
+        const edge = i === 0 ? -1 : i === AGES.length - 1 ? 1 : 0;
+        el("text", { x: X(i) + edge * 9, y: Y(v) + (edge ? 4 : -9), "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: s.col, "text-anchor": edge < 0 ? "end" : edge > 0 ? "start" : "middle", "font-weight": 700 }, g, v.toFixed(1));
+      }
+    });
+  });
+}
+
+/* M字カーブ */
+ageLines("mCurve", [
+  { name: "平成27年", col: "#b45309", dash: "6 4", v: [16.8, 68.5, 80.3, 71.2, 71.8, 74.8, 77.5, 76.3, 69.0, 50.6, 15.3] },
+  { name: "令和6年", col: "#9ca3af", w: 1.6, r: 2.5, v: [23.6, 77.2, 88.9, 83.9, 81.4, 83.0, 83.9, 81.6, 77.3, 66.6, 19.3] },
+  { name: "令和7年", col: "#0e7490", w: 2.6, r: 4.5, label: true, v: [24.0, 78.4, 90.5, 85.9, 82.7, 84.3, 84.8, 82.3, 78.5, 67.6, 19.7] }
+], v => 270 - v * 2.4);
+
+/* L字カーブ */
+ageLines("lCurve", [
+  { name: "平成27年", col: "#b45309", dash: "6 4", v: [2.2, 35.1, 46.7, 36.0, 31.3, 28.1, 27.5, 26.3, 22.8, 8.9, 1.8] },
+  { name: "令和7年", col: "#0e7490", w: 2.6, r: 4.5, label: true, v: [2.7, 40.5, 62.8, 54.2, 43.6, 39.5, 37.1, 34.0, 29.2, 16.2, 2.2] }
+], v => 270 - v * 3);
+
+/* 男女間賃金差異の推移 2005〜2025 */
+(function () {
+  const vals = [65.9, 66.0, 67.0, 67.6, 70.0, 69.5, 70.9, 70.9, 71.5, 72.6, 72.4, 72.9, 73.7, 73.5, 74.3, 74.3, 75.2, 75.7, 74.8, 75.8, 76.6];
+  const g = document.getElementById("gapLine");
+  const X = i => 70 + 570 * i / (vals.length - 1);
+  const Y = v => 240 - (v - 60) * 10;
+  el("polyline", { points: vals.map((v, i) => `${X(i)},${Y(v)}`).join(" "), fill: "none", stroke: "#1e3a8a", "stroke-width": 2.2, "stroke-linejoin": "round" }, g);
+  vals.forEach((v, i) => {
+    const yr = 2005 + i;
+    el("circle", { cx: X(i), cy: Y(v), r: 3.5, fill: "#1e3a8a", stroke: "#fff", "stroke-width": 1.5 }, g);
+    const hit = el("circle", { cx: X(i), cy: Y(v), r: 9, fill: "transparent" }, g);
+    el("title", {}, hit, `${yr}年：${v.toFixed(1)}`);
+    if ([2005, 2010, 2015, 2020, 2025].includes(yr)) {
+      el("text", { x: X(i), y: Y(v) - 10, "font-size": 11.5, "font-family": "JetBrains Mono, monospace", fill: "#1f2937", "text-anchor": "middle", "font-weight": 700 }, g, v.toFixed(1));
+      el("text", { x: X(i), y: 258, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "#6b7280", "text-anchor": "middle" }, g, yr);
+    }
+  });
+})();
+
+/* 賃金差異の要因（横棒） */
+(function () {
+  const g = document.getElementById("factorBars");
+  const data = [["役職", 85.7], ["勤続年数", 79.9], ["労働時間", 78.5], ["学歴", 78.4], ["年齢", 77.0], ["企業規模", 76.6], ["産業", 75.4]];
+  const base = 76.6, x0 = 110, k = 18, min = 70; // 70→x0
+  const X = v => x0 + (v - min) * k;
+  // axis
+  [70, 75, 80, 85, 90].forEach(t => {
+    el("line", { x1: X(t), y1: 20, x2: X(t), y2: 262, stroke: "#eceae3" }, g);
+    el("text", { x: X(t), y: 280, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "#6b7280", "text-anchor": "middle" }, g, t);
+  });
+  el("line", { x1: X(base), y1: 14, x2: X(base), y2: 266, stroke: "#6b7280", "stroke-dasharray": "4 3" }, g);
+  el("text", { x: X(base), y: 12, "font-size": 11, fill: "#6b7280", "text-anchor": "middle" }, g, "調整前 76.6");
+  data.forEach((d, i) => {
+    const y = 26 + i * 34;
+    el("text", { x: x0 - 10, y: y + 15, "font-size": 13, fill: "#1f2937", "text-anchor": "end", "font-weight": 700 }, g, d[0]);
+    el("rect", { x: X(min), y: y, width: X(Math.min(base, d[1])) - X(min), height: 22, rx: 3, fill: "#e5e7eb" }, g);
+    const diff = d[1] - base;
+    if (Math.abs(diff) > 0.01) {
+      const up = diff > 0;
+      el("rect", { x: up ? X(base) : X(d[1]), y: y, width: Math.abs(diff) * k, height: 22, rx: 3, fill: up ? "#0e7490" : "#b91c1c" }, g);
+    }
+    el("text", { x: Math.max(X(d[1]), X(base)) + 8, y: y + 15, "font-size": 12, "font-family": "JetBrains Mono, monospace", fill: "#1f2937" }, g,
+      `${d[1].toFixed(1)}（${diff >= 0 ? "+" : "−"}${Math.abs(diff).toFixed(1)}）`);
+  });
+})();
+
+/* 管理職に占める女性の割合（国際比較） */
+(function () {
+  const g = document.getElementById("mgrBars");
+  const data = [["日本", 45.8, 14.4], ["韓国", 44.8, 18.1], ["ドイツ", 46.8, 29.5], ["ノルウェー", 47.1, 34.3], ["フランス", 48.8, 39.5],
+                ["シンガポール", 47.7, 40.1], ["英国", 48.6, 40.7], ["オーストラリア", 47.8, 41.7], ["米国", 47.1, 42.7], ["スウェーデン", 47.5, 44.4], ["フィリピン", 41.1, 45.7]];
+  const x0 = 110, k = 9.5;
+  [0, 10, 20, 30, 40, 50].forEach(t => {
+    el("line", { x1: x0 + t * k, y1: 10, x2: x0 + t * k, y2: 300, stroke: "#eceae3" }, g);
+    el("text", { x: x0 + t * k, y: 318, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "#6b7280", "text-anchor": "middle" }, g, t);
+  });
+  data.forEach((d, i) => {
+    const y = 14 + i * 26;
+    const jp = i === 0;
+    el("text", { x: x0 - 10, y: y + 15, "font-size": 12.5, fill: jp ? "#b45309" : "#1f2937", "text-anchor": "end", "font-weight": 700 }, g, d[0]);
+    el("rect", { x: x0, y: y, width: d[1] * k, height: 10, rx: 2, fill: "#cbd5e1" }, g);
+    el("rect", { x: x0, y: y + 11, width: d[2] * k, height: 10, rx: 2, fill: jp ? "#b45309" : "#1e3a8a" }, g);
+    el("text", { x: x0 + d[1] * k + 6, y: y + 9, "font-size": 10.5, "font-family": "JetBrains Mono, monospace", fill: "#6b7280" }, g, d[1].toFixed(1));
+    el("text", { x: x0 + d[2] * k + 6, y: y + 21, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: jp ? "#b45309" : "#1e3a8a", "font-weight": 700 }, g, d[2].toFixed(1));
+  });
+})();
+
+/* =========================================
+   比較優位：世帯内の分業シミュレーター
+   ========================================= */
+(function () {
+  const ids = ["caAc", "caAk", "caBc", "caBk"];
+  const s = {}; ids.forEach(id => s[id] = document.getElementById(id));
+  const svg = document.getElementById("caSvg");
+  const CLEAN = "#0e7490", COOK = "#b45309";
+  function draw() {
+    const a = { c: +s.caAc.value, k: +s.caAk.value }, b = { c: +s.caBc.value, k: +s.caBk.value };
+    ids.forEach(id => document.getElementById(id + "Out").textContent = s[id].value + " 分");
+    // 3つの分担：自分のことは自分で／Aが掃除・Bが料理／Aが料理・Bが掃除
+    const plans = [
+      { name: "自分のことは自分で", A: [a.c, a.k], B: [b.c, b.k] },
+      { name: "A が掃除・B が料理", A: [2 * a.c, 0], B: [0, 2 * b.k] },
+      { name: "A が料理・B が掃除", A: [0, 2 * a.k], B: [2 * b.c, 0] }
+    ];
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const maxT = Math.max(...plans.map(p => Math.max(p.A[0] + p.A[1], p.B[0] + p.B[1])), 60);
+    const x0 = 150, W = 360, k = W / maxT;
+    const totals = plans.map(p => p.A[0] + p.A[1] + p.B[0] + p.B[1]);
+    const best = totals[1] <= totals[2] ? 1 : 2;
+    plans.forEach((p, i) => {
+      const y = 12 + i * 78;
+      el("text", { x: 8, y: y + 12, "font-size": 12.5, fill: i === best ? "#047857" : "#1f2937", "font-weight": 700 }, svg, p.name);
+      el("text", { x: 8, y: y + 30, "font-size": 11.5, fill: "#6b7280" }, svg, `2人の合計 ${totals[i]} 分`);
+      [["A", p.A], ["B", p.B]].forEach(([who, t], j) => {
+        const yy = y + j * 30;
+        el("text", { x: x0 - 10, y: yy + 16, "font-size": 12.5, fill: "#1f2937", "text-anchor": "end", "font-weight": 700 }, svg, who);
+        let xx = x0;
+        if (t[0] > 0) { el("rect", { x: xx, y: yy + 3, width: t[0] * k, height: 18, rx: 3, fill: CLEAN }, svg); xx += t[0] * k; }
+        if (t[1] > 0) { el("rect", { x: xx, y: yy + 3, width: t[1] * k, height: 18, rx: 3, fill: COOK }, svg); xx += t[1] * k; }
+        const tot = t[0] + t[1];
+        const own = who === "A" ? plans[0].A[0] + plans[0].A[1] : plans[0].B[0] + plans[0].B[1];
+        const diff = tot - own;
+        const col = i === 0 ? "#1f2937" : (diff < 0 ? "#047857" : diff > 0 ? "#b91c1c" : "#6b7280");
+        el("text", { x: xx + 8, y: yy + 16, "font-size": 12, "font-family": "JetBrains Mono, monospace", fill: col, "font-weight": 700 }, svg,
+          i === 0 ? `${tot}分` : `${tot}分（${diff > 0 ? "+" : diff < 0 ? "−" : "±"}${Math.abs(diff)}）`);
+      });
+      if (i < 2) el("line", { x1: 8, y1: y + 70, x2: 632, y2: y + 70, stroke: "#f1f1ec" }, svg);
+    });
+    // 機会費用
+    const oA = a.c / a.k, oB = b.c / b.k;
+    const caClean = oA < oB ? "A" : oA > oB ? "B" : null;
+    const bp = plans[best], A0 = a.c + a.k, B0 = b.c + b.k;
+    const dA = bp.A[0] + bp.A[1] - A0, dB = bp.B[0] + bp.B[1] - B0;
+    const v = document.getElementById("caVerdict");
+    let msg = `掃除の機会費用（掃除時間 ÷ 料理時間）　A：<span class="readout">${oA.toFixed(2)}</span>　B：<span class="readout">${oB.toFixed(2)}</span>　→ ` +
+      (caClean ? `<b>${caClean} が掃除に、${caClean === "A" ? "B" : "A"} が料理に比較優位</b>` : `<b>比較優位の差がない</b>`) + "<br>";
+    msg += `合計時間が最も少ない分担：<b>${bp.name}</b>（A ${dA <= 0 ? "−" : "+"}${Math.abs(dA)} 分、B ${dB <= 0 ? "−" : "+"}${Math.abs(dB)} 分）`;
+    if (dA < 0 && dB < 0) { v.className = "verdict good"; msg += `　<b class="good">2人とも時間が減る</b>`; }
+    else if (dA > 0 || dB > 0) { v.className = "verdict bad"; msg += `　<b class="bad">一方の時間が増える</b>：2人の合計は減っても、分担の仕方によっては片方の負担が増える。その場合は、もう一方が別の家事を引き受けるなどの調整が必要になる`; }
+    else { v.className = "verdict"; }
+    v.innerHTML = msg;
+  }
+  ids.forEach(id => s[id].addEventListener("input", draw));
+  draw();
+})();
+
+/* =========================================
+   Canvas 共通プロッタ（DPR対応）
+   ========================================= */
+function makePlot(canvas, o) {
+  const dpr = window.devicePixelRatio || 1;
+  const cssW = canvas.clientWidth, cssH = canvas.clientHeight;
+  canvas.width = cssW * dpr; canvas.height = cssH * dpr;
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const pad = { l: 52, r: 30, t: 18, b: 44 };
+  const W = cssW - pad.l - pad.r, H = cssH - pad.t - pad.b;
+  const xToPx = x => pad.l + (x - o.xmin) / (o.xmax - o.xmin) * W;
+  const yToPx = y => pad.t + (1 - (y - o.ymin) / (o.ymax - o.ymin)) * H;
+  const pxToX = px => o.xmin + (px - pad.l) / W * (o.xmax - o.xmin);
+  ctx.clearRect(0, 0, cssW, cssH);
+  ctx.font = '11px "JetBrains Mono", monospace';
+  ctx.strokeStyle = "#eceae3"; ctx.lineWidth = 1; ctx.fillStyle = "#6b7280";
+  o.yticks.forEach(t => {
+    const y = yToPx(t);
+    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l + W, y); ctx.stroke();
+    ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(t, pad.l - 6, y);
+  });
+  o.xticks.forEach(t => {
+    const x = xToPx(t);
+    ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + H); ctx.stroke();
+    ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(t, x, pad.t + H + 6);
+  });
+  ctx.strokeStyle = "#6b7280"; ctx.lineWidth = 1.2;
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t + H); ctx.lineTo(pad.l + W, pad.t + H); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + H); ctx.stroke();
+  ctx.font = '12px "Noto Sans JP", sans-serif'; ctx.fillStyle = "#4b5563";
+  ctx.textAlign = "right"; ctx.textBaseline = "bottom"; ctx.fillText(o.xlabel, pad.l + W, pad.t + H + 40);
+  ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(o.ylabel, pad.l + 6, pad.t);
+  return { ctx, pad, W, H, xToPx, yToPx, pxToX };
+}
+function drawCurve(P, f, x0, x1, col, lw, dash) {
+  const { ctx } = P;
+  ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = lw; if (dash) ctx.setLineDash(dash);
+  ctx.beginPath();
+  const n = 200;
+  for (let i = 0; i <= n; i++) {
+    const x = x0 + (x1 - x0) * i / n, px = P.xToPx(x), py = P.yToPx(f(x));
+    i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+  }
+  ctx.stroke(); ctx.restore();
+}
+function fillBetween(P, f, g, x0, x1, col) {
+  if (x1 <= x0) return;
+  const { ctx } = P, n = 120;
+  ctx.beginPath();
+  for (let i = 0; i <= n; i++) { const x = x0 + (x1 - x0) * i / n; const px = P.xToPx(x), py = P.yToPx(f(x)); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
+  for (let i = n; i >= 0; i--) { const x = x0 + (x1 - x0) * i / n; ctx.lineTo(P.xToPx(x), P.yToPx(g(x))); }
+  ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+}
+function dot(P, x, y, col, r) {
+  const { ctx } = P;
+  ctx.beginPath(); ctx.arc(P.xToPx(x), P.yToPx(y), r || 6, 0, Math.PI * 2);
+  ctx.fillStyle = col; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = "#fff"; ctx.stroke();
+}
+
+/* =========================================
+   企業特殊的訓練への共同投資と就業中断
+   ========================================= */
+(function () {
+  const cv = document.getElementById("fsCanvas");
+  const sT = document.getElementById("fsT1"), sS = document.getElementById("fsS");
+  const TB = 40, U = 4;
+  const Y = t => 2 + 8 * (1 - Math.pow(1 - t / TB, 2));
+  const tp = TB * (1 - Math.sqrt(0.75)); // Y(t') = U
+  // ∫0^T (Y-U) dt を数値計算
+  const integ = (T) => { const n = 400; let s = 0; for (let i = 0; i < n; i++) { const t = T * (i + .5) / n; s += (Y(t) - U) * T / n; } return s; };
+  let be = tp; while (integ(be) < 0 && be < TB) be += 0.01; // 損益分岐
+  let P;
+  function draw() {
+    const t1 = +sT.value, s = +sS.value;
+    const W = t => U + s * (Y(t) - U);
+    document.getElementById("fsT1Out").textContent = t1 + " 年目";
+    document.getElementById("fsSOut").textContent = s.toFixed(2);
+    P = makePlot(cv, { xmin: 0, xmax: TB, ymin: 0, ymax: 11, xticks: [0, 5, 10, 15, 20, 25, 30, 35, 40], yticks: [0, 2, 4, 6, 8, 10],
+      xlabel: "勤続年数", ylabel: "生産性・賃金" });
+    const UU = () => U;
+    fillBetween(P, Y, UU, 0, Math.min(tp, t1), "rgba(185,28,28,.18)");
+    fillBetween(P, Y, UU, tp, Math.max(tp, t1), "rgba(4,120,87,.18)");
+    fillBetween(P, Y, UU, Math.max(tp, t1), TB, "rgba(107,114,128,.20)");
+    drawCurve(P, UU, 0, TB, "#1e3a8a", 2);
+    drawCurve(P, W, 0, TB, "#0e7490", 2.4);
+    drawCurve(P, Y, 0, TB, "#b45309", 2.6);
+    const { ctx } = P;
+    // t1 line
+    ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = "#1f2937"; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(P.xToPx(t1), P.pad.t); ctx.lineTo(P.xToPx(t1), P.pad.t + P.H); ctx.stroke(); ctx.restore();
+    ctx.font = '12px "JetBrains Mono", monospace'; ctx.fillStyle = "#1f2937"; ctx.textAlign = "center";
+    if (t1 < TB) ctx.fillText("t₁", P.xToPx(t1), P.pad.t + 10);
+    // t' and A
+    ctx.save(); ctx.setLineDash([2, 3]); ctx.strokeStyle = "#6b7280"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(P.xToPx(tp), P.yToPx(U)); ctx.lineTo(P.xToPx(tp), P.pad.t + P.H); ctx.stroke(); ctx.restore();
+    dot(P, tp, U, "#1f2937", 4.5);
+    ctx.fillStyle = "#1f2937"; ctx.textAlign = "left"; ctx.font = 'italic 13px serif';
+    ctx.fillText("A", P.xToPx(tp) - 4, P.yToPx(U) - 10);
+    ctx.font = '12px "JetBrains Mono", monospace'; ctx.textAlign = "left";
+    ctx.fillStyle = "#b45309"; ctx.fillText("Y", P.xToPx(TB) + 6, P.yToPx(Y(TB)) + 4);
+    ctx.fillStyle = "#0e7490"; ctx.fillText("W", P.xToPx(TB) + 6, P.yToPx(W(TB)) + 4);
+    ctx.fillStyle = "#1e3a8a"; ctx.fillText("U", P.xToPx(TB) + 6, P.yToPx(U) + 4);
+    // 計算
+    const T = Math.min(t1, TB);
+    const net = integ(T);
+    const cost = -integ(tp);
+    const firm = (1 - s) * net, worker = s * net;
+    const v = document.getElementById("fsVerdict");
+    const ok = net > 0;
+    v.className = "verdict " + (ok ? "good" : "bad");
+    v.innerHTML = `訓練費用の合計：<span class="readout">${cost.toFixed(1)}</span>（企業 ${((1 - s) * cost).toFixed(1)}／労働者 ${(s * cost).toFixed(1)}）　` +
+      `${T} 年目までの純収益：企業 <span class="readout">${firm >= 0 ? "+" : ""}${firm.toFixed(1)}</span>　労働者 <span class="readout">${worker >= 0 ? "+" : ""}${worker.toFixed(1)}</span><br>` +
+      (ok ? `<b class="good">投資を回収できている</b>` : `<b class="bad">投資を回収できない</b>`) +
+      `　損益分岐となる中断時点は約 <span class="readout">${be.toFixed(1)} 年目</span>（$s$ によらない）`;
+    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([v]).catch(() => {});
+  }
+  function drag(e) {
+    const r = cv.getBoundingClientRect();
+    const px = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+    const t = Math.round(Math.min(TB, Math.max(1, P.pxToX(px))) * 2) / 2;
+    sT.value = t; draw();
+  }
+  let down = false;
+  cv.addEventListener("pointerdown", e => { down = true; cv.setPointerCapture(e.pointerId); drag(e); });
+  cv.addEventListener("pointermove", e => { if (down) drag(e); });
+  cv.addEventListener("pointerup", () => { down = false; });
+  sT.addEventListener("input", draw); sS.addEventListener("input", draw);
+  window.addEventListener("resize", draw);
+  draw();
+})();
+
+/* =========================================
+   結婚のマッチング（上方婚・同類婚・下方婚）
+   ========================================= */
+(function () {
+  const svg = document.getElementById("mtSvg");
+  const v = document.getElementById("mtVerdict");
+  const btns = document.querySelectorAll("#mtSeg button");
+  const plans = {
+    hyper: { pairs: [[1, 2], [2, 3]], msg: `女性は自分より上の男性と、男性は自分より下の女性と結婚する。<b class="bad">女性1と男性3がマッチできずに残る</b>。高学歴・高所得の女性と、低学歴・低所得の男性が結婚しにくい構図である。` },
+    homo:  { pairs: [[1, 1], [2, 2], [3, 3]], msg: `同じ順位どうしが結婚する（同類婚）。<b class="good">全員がマッチする</b>。夫婦の年収の表で、高収入の妻の夫も高収入だったのはこの傾向の表れである。` },
+    hypo:  { pairs: [[1, 2], [2, 3], [3, 1]], msg: `上方婚の傾向は残るが、<b class="good">女性1が自分より下の男性3と結婚できる</b>ようになり、全員がマッチする。Fukuda, Raymo and Yoda（2020）が示した、高学歴女性の学歴下方婚の増加に対応する。` }
+  };
+  function draw(key) {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const p = plans[key];
+    const xm = 170, xw = 470, Yr = r => 40 + (r - 1) * 80 + 20;
+    el("text", { x: xm, y: 24, "font-size": 15, "font-weight": 900, fill: "#0e7490", "text-anchor": "middle" }, svg, "男性");
+    el("text", { x: xw, y: 24, "font-size": 15, "font-weight": 900, fill: "#b45309", "text-anchor": "middle" }, svg, "女性");
+    const mm = new Set(p.pairs.map(q => q[0])), ww = new Set(p.pairs.map(q => q[1]));
+    p.pairs.forEach(([m, w]) => {
+      el("line", { x1: xm + 26, y1: Yr(m), x2: xw - 26, y2: Yr(w), stroke: m < w ? "#1e3a8a" : m > w ? "#047857" : "#6b7280", "stroke-width": 2.2 }, svg);
+    });
+    for (let r = 1; r <= 3; r++) {
+      [[xm, mm.has(r), "#0e7490"], [xw, ww.has(r), "#b45309"]].forEach(([x, matched, col]) => {
+        el("circle", { cx: x, cy: Yr(r), r: 20, fill: matched ? "#fff" : "#fef2f2", stroke: matched ? col : "#b91c1c", "stroke-width": 2, "stroke-dasharray": matched ? "" : "4 3" }, svg);
+        el("text", { x: x, y: Yr(r) + 6, "font-size": 16, "font-weight": 700, "font-family": "JetBrains Mono, monospace", fill: matched ? "#1f2937" : "#b91c1c", "text-anchor": "middle" }, svg, r);
+        if (!matched) el("text", { x: x + (x === xm ? -34 : 34), y: Yr(r) + 5, "font-size": 12, fill: "#b91c1c", "text-anchor": x === xm ? "end" : "start", "font-weight": 700 }, svg, "未婚");
+      });
+    }
+    el("text", { x: 320, y: 272, "font-size": 11.5, fill: "#6b7280", "text-anchor": "middle" }, svg, "1 が最も学歴・所得が高い　線の色：紺＝女性の上方婚　緑＝女性の下方婚　灰＝同類婚");
+    v.innerHTML = p.msg;
+    btns.forEach(b => b.classList.toggle("on", b.dataset.k === key));
+  }
+  btns.forEach(b => b.addEventListener("click", () => draw(b.dataset.k)));
+  draw("hyper");
+})();
+
+/* =========================================
+   localStorage への保存 / 読み込み
+   ========================================= */
+const STORAGE_KEY = "labor-lecture-f03-answers";
+function loadAnswers() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch { return {}; }
+}
+function saveAnswers(obj) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(obj)); } catch { /* 保存できない環境では無視 */ }
+}
+const answers = loadAnswers();
+document.querySelectorAll("textarea.answer-input").forEach(t => {
+  const qid = t.dataset.qid;
+  if (answers[qid]) t.value = answers[qid];
+  const indicator = document.querySelector(`.answer-save[data-for="${qid}"]`);
+  let saveTimer;
+  const setIndicator = (state) => {
+    if (!indicator) return;
+    if (state === "saved") { indicator.textContent = "保存済み"; indicator.classList.add("saved"); }
+    else if (state === "saving") { indicator.textContent = "保存中…"; indicator.classList.remove("saved"); }
+    else { indicator.textContent = "未保存"; indicator.classList.remove("saved"); }
+  };
+  if (t.value) setIndicator("saved");
+  t.addEventListener("input", () => {
+    setIndicator("saving");
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      const a = loadAnswers();
+      a[qid] = t.value;
+      saveAnswers(a);
+      setIndicator("saved");
+    }, 350);
+  });
+});
+</script>
+</body>
+</html>
